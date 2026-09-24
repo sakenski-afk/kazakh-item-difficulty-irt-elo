@@ -1,0 +1,16 @@
+# data are not redistributable
+data/raw/*
+!data/raw/.gitkeep
+data/*.csv
+data/*.csv.gz
+# pipeline outputs (reference results are in results/reference/)
+results/*
+!results/reference/
+# python / tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it and the accompanying article."
+title: "Text-based item difficulty estimation, IRT calibration and learner performance prediction on a Kazakh–Russian gamified learning platform: code"
+version: 1.0.0
+date-released: 2026-09-24
+license: MIT
+type: software
+authors:
+  - family-names: Kulatay
+    given-names: Aibolat
+    affiliation: "Department of Artificial Intelligence and BIG DATA, al-Farabi Kazakh National University, Almaty, Kazakhstan"
+  - family-names: Zhaisanova
+    given-names: Dinara
+    affiliation: "Department of Artificial Intelligence and BIG DATA, al-Farabi Kazakh National University, Almaty, Kazakhstan"
+  - family-names: Kulambayev
+    given-names: Bakhytzhan
+    affiliation: "Higher School of Telecommunications, Turan University, Almaty, Kazakhstan"
+  - family-names: Mambetov
+    given-names: Saken
+    affiliation: "Higher School of Information Technologies, Turan University, Almaty, Kazakhstan"
+keywords:
+  - educational data mining
+  - item difficulty estimation
+  - item response theory
+  - transformer models
+  - Elo rating
+  - Kazakh language
+preferred-citation:
+  type: article
+  title: "Text-Based Item Difficulty Estimation, IRT Calibration and Learner Performance Prediction on a Kazakh–Russian Gamified Learning Platform"
+  journal: "International Journal of Advanced Computer Science and Applications"
+  year: 2026
+  authors:
+    - family-names: Kulatay
+      given-names: Aibolat
+    - family-names: Zhaisanova
+      given-names: Dinara
+    - family-names: Kulambayev
+      given-names: Bakhytzhan
+    - family-names: Mambetov
+      given-names: Saken

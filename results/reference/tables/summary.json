@@ -1,0 +1,372 @@
+{
+  "part1_ci": [
+    {
+      "model": "TF-IDF + metadata Ridge",
+      "Pearson": 0.4607451852434285,
+      "CI95": [
+        0.43015930878228936,
+        0.49232437758435854
+      ]
+    },
+    {
+      "model": "bert-base-multilingual-cased (cat_text, seed-ensemble)",
+      "Pearson": 0.5348747554508547,
+      "CI95": [
+        0.5016584310401827,
+        0.565896353675793
+      ],
+      "RMSE_b": 0.7148405753352816
+    },
+    {
+      "model": "bert-base-multilingual-cased (text, seed-ensemble)",
+      "Pearson": 0.49649282151272484,
+      "CI95": [
+        0.46489764915813114,
+        0.5252681809346256
+      ],
+      "RMSE_b": 0.7163901783753467
+    },
+    {
+      "model": "kaz-roberta-conversational (cat_text, seed-ensemble)",
+      "Pearson": 0.5147221115081866,
+      "CI95": [
+        0.48289619353570834,
+        0.54589625187166
+      ],
+      "RMSE_b": 0.7071386822499333
+    },
+    {
+      "model": "kaz-roberta-conversational (text, seed-ensemble)",
+      "Pearson": 0.4942397030156736,
+      "CI95": [
+        0.45918309362761345,
+        0.5273274421739146
+      ],
+      "RMSE_b": 0.7165471666589085
+    },
+    {
+      "model": "xlm-roberta-base (cat_text, seed-ensemble)",
+      "Pearson": 0.5188684782639836,
+      "CI95": [
+        0.48623253566261376,
+        0.5505705960086406
+      ],
+      "RMSE_b": 0.7039021691858255
+    },
+    {
+      "model": "xlm-roberta-base (text, seed-ensemble)",
+      "Pearson": 0.49775349983427236,
+      "CI95": [
+        0.4652633355267123,
+        0.5296818052344986
+      ],
+      "RMSE_b": 0.7166154786836195
+    },
+    {
+      "model": "xlm-roberta-large (cat_text, seed-ensemble)",
+      "Pearson": 0.5265250322276881,
+      "CI95": [
+        0.49433537105134845,
+        0.5554282503141867
+      ],
+      "RMSE_b": 0.7017168771704753
+    },
+    {
+      "model": "xlm-roberta-large (text, seed-ensemble)",
+      "Pearson": 0.5165085709671526,
+      "CI95": [
+        0.48434435773076123,
+        0.5481254372879036
+      ],
+      "RMSE_b": 0.70432370349992
+    }
+  ],
+  "part1_selection_by_val_rmse": {
+    "xlm-roberta-large (cat_text)": 0.8541830092199908,
+    "xlm-roberta-large (text)": 0.8552505238531621,
+    "xlm-roberta-base (cat_text)": 0.8601447179003482,
+    "bert-base-multilingual-cased (text)": 0.8615060887223444,
+    "kaz-roberta-conversational (text)": 0.8647578792884714,
+    "kaz-roberta-conversational (cat_text)": 0.869151186048929,
+    "xlm-roberta-base (text)": 0.8696782118078241,
+    "bert-base-multilingual-cased (cat_text)": 0.8703706184263447
+  },
+  "part1_best_vs_baseline": {
+    "best_finetuned": "xlm-roberta-large (cat_text)",
+    "delta_r": 0.06562749616709496,
+    "CI95": [
+      0.04320246761866647,
+      0.0889748308891137
+    ],
+    "abs_err_wilcoxon_p": 2.3928008908590736e-08
+  },
+  "part1_by_language": [
+    {
+      "lang": "en",
+      "n": 168,
+      "baseline_r": 0.5582384077867587,
+      "finetuned_r": 0.6218047712996446,
+      "baseline_RMSE": 0.7598362529035829,
+      "finetuned_RMSE": 0.7178845449251492
+    },
+    {
+      "lang": "kz",
+      "n": 2081,
+      "baseline_r": 0.45313550827618954,
+      "finetuned_r": 0.5028516609777026,
+      "baseline_RMSE": 0.7059268869755394,
+      "finetuned_RMSE": 0.6841927757007829
+    },
+    {
+      "lang": "ru",
+      "n": 796,
+      "baseline_r": 0.4245009411912838,
+      "finetuned_r": 0.5303111739786592,
+      "baseline_RMSE": 0.792836014532942,
+      "finetuned_RMSE": 0.742331510880401
+    }
+  ],
+  "cross_lingual": {
+    "pairs": 4963,
+    "pearson_b": 0.940859212055236,
+    "spearman_b": 0.9323945411075135,
+    "mean_p_kz": 0.582657688818928,
+    "mean_p_ru": 0.5394755599124718,
+    "mean_delta_b_ru_minus_kz": 0.17022328585723723,
+    "paired_t_p": 1.1498563366449356e-204,
+    "share_abs_delta_gt_0.5": 0.21761031634092282,
+    "share_significant_DIF_|z|>3.29": 0.6266371146483981
+  },
+  "cross_lingual_by_category": [
+    {
+      "cat_name": "\u041b\u043e\u0433\u043e\u0442\u0438\u043f\u0442\u0435\u0440",
+      "mean": -0.024,
+      "size": 700
+    },
+    {
+      "cat_name": "\u0422\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442",
+      "mean": -0.02,
+      "size": 501
+    },
+    {
+      "cat_name": "\u041c\u0435\u043c\u043b\u0435\u043a\u0435\u0442\u0442\u0435\u0440",
+      "mean": 0.06,
+      "size": 505
+    },
+    {
+      "cat_name": "\u0422\u0443\u043b\u0430\u0440",
+      "mean": 0.117,
+      "size": 216
+    },
+    {
+      "cat_name": "\u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0430",
+      "mean": 0.133,
+      "size": 353
+    },
+    {
+      "cat_name": "\u0410\u0441\u0442\u0430\u043d\u0430\u043b\u0430\u0440",
+      "mean": 0.143,
+      "size": 385
+    },
+    {
+      "cat_name": "\u049a\u0430\u0440\u0436\u044b \u0441\u0430\u0443\u0430\u0442\u0442\u044b\u043b\u044b\u0493\u044b",
+      "mean": 0.186,
+      "size": 154
+    },
+    {
+      "cat_name": "\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u044f\u043b\u044b\u049b \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441",
+      "mean": 0.201,
+      "size": 334
+    },
+    {
+      "cat_name": "\u041c\u0438 \u0436\u0430\u0442\u0442\u044b\u0493\u0443\u044b",
+      "mean": 0.274,
+      "size": 280
+    },
+    {
+      "cat_name": "\u0412\u0430\u043b\u044e\u0442\u0430\u043b\u0430\u0440",
+      "mean": 0.296,
+      "size": 277
+    },
+    {
+      "cat_name": "\u0422\u0430\u043d\u044b\u043c\u0430\u043b \u0442\u04b1\u043b\u0493\u0430\u043b\u0430\u0440",
+      "mean": 0.328,
+      "size": 540
+    },
+    {
+      "cat_name": "\u0421\u04d9\u043d \u04d9\u043b\u0435\u043c\u0456",
+      "mean": 0.34,
+      "size": 335
+    },
+    {
+      "cat_name": "\u0422\u04d9\u0443\u0435\u043b\u0441\u0456\u0437 \u049a\u0430\u0437\u0430\u049b\u0441\u0442\u0430\u043d",
+      "mean": 0.439,
+      "size": 383
+    }
+  ],
+  "coldstart_irt": [
+    {
+      "model": "kaz-roberta-conversational",
+      "n_items": 347,
+      "r_b_1PL": 0.3782,
+      "rho_b_1PL": 0.3746,
+      "r_b_2PL": 0.3632,
+      "rho_b_2PL": 0.3793,
+      "r_b_3PL": 0.3477,
+      "rho_b_3PL": 0.3624,
+      "r_logit_pvalue": 0.3831,
+      "p_value_of_r_b2PL": 0.0
+    },
+    {
+      "model": "xlm-roberta-base",
+      "n_items": 347,
+      "r_b_1PL": 0.349,
+      "rho_b_1PL": 0.3554,
+      "r_b_2PL": 0.3387,
+      "rho_b_2PL": 0.3546,
+      "r_b_3PL": 0.3244,
+      "rho_b_3PL": 0.3434,
+      "r_logit_pvalue": 0.353,
+      "p_value_of_r_b2PL": 0.0
+    },
+    {
+      "model": "xlm-roberta-large",
+      "n_items": 347,
+      "r_b_1PL": 0.3052,
+      "rho_b_1PL": 0.3032,
+      "r_b_2PL": 0.3055,
+      "rho_b_2PL": 0.2969,
+      "r_b_3PL": 0.2829,
+      "rho_b_3PL": 0.2837,
+      "r_logit_pvalue": 0.3078,
+      "p_value_of_r_b2PL": 0.0
+    },
+    {
+      "model": "bert-base-multilingual-cased",
+      "n_items": 347,
+      "r_b_1PL": 0.2959,
+      "rho_b_1PL": 0.3087,
+      "r_b_2PL": 0.2911,
+      "rho_b_2PL": 0.3193,
+      "r_b_3PL": 0.2722,
+      "rho_b_3PL": 0.2996,
+      "r_logit_pvalue": 0.2968,
+      "p_value_of_r_b2PL": 0.0
+    },
+    {
+      "model": "BGE-M3 + Ridge",
+      "n_items": 347,
+      "r_b_1PL": 0.3131,
+      "rho_b_1PL": 0.2853,
+      "r_b_2PL": 0.2803,
+      "rho_b_2PL": 0.2825,
+      "r_b_3PL": 0.2849,
+      "rho_b_3PL": 0.2758,
+      "r_logit_pvalue": 0.3187,
+      "p_value_of_r_b2PL": 0.0
+    },
+    {
+      "model": "TF-IDF + Ridge",
+      "n_items": 347,
+      "r_b_1PL": 0.2732,
+      "rho_b_1PL": 0.2401,
+      "r_b_2PL": 0.2712,
+      "rho_b_2PL": 0.253,
+      "r_b_3PL": 0.2651,
+      "rho_b_3PL": 0.2391,
+      "r_logit_pvalue": 0.2745,
+      "p_value_of_r_b2PL": 0.0
+    },
+    {
+      "model": "LaBSE + Ridge",
+      "n_items": 347,
+      "r_b_1PL": 0.1874,
+      "rho_b_1PL": 0.1853,
+      "r_b_2PL": 0.1942,
+      "rho_b_2PL": 0.2009,
+      "r_b_3PL": 0.1806,
+      "rho_b_3PL": 0.1886,
+      "r_logit_pvalue": 0.1881,
+      "p_value_of_r_b2PL": 0.0003
+    },
+    {
+      "model": "mE5-large + Ridge",
+      "n_items": 347,
+      "r_b_1PL": 0.139,
+      "rho_b_1PL": 0.1349,
+      "r_b_2PL": 0.1359,
+      "rho_b_2PL": 0.137,
+      "r_b_3PL": 0.1252,
+      "rho_b_3PL": 0.1334,
+      "r_logit_pvalue": 0.1445,
+      "p_value_of_r_b2PL": 0.0113
+    }
+  ],
+  "elo_linkage": {
+    "n_categories": 13,
+    "pearson_elo_vs_bank": 0.5934668551470988,
+    "pearson_p": 0.03250233964419428,
+    "spearman_elo_vs_bank": 0.39560439560439564,
+    "spearman_p": 0.18088916310494077,
+    "pearson_elo_vs_model": 0.5983150075263172,
+    "pearson_elo_vs_model_p": 0.030760007870818687
+  },
+  "irt": {
+    "data": {
+      "responses": 67990,
+      "persons": 680,
+      "items": 416,
+      "accuracy": 0.5747315883636475
+    },
+    "heldout": {
+      "Item p-value": {
+        "AUC": 0.8065699499444172,
+        "LogLoss": 0.5275139808654785,
+        "Brier": 0.17556115984916687
+      },
+      "Item + person logit (additive)": {
+        "AUC": 0.8200823277186657,
+        "LogLoss": 0.5245379209518433,
+        "Brier": 0.17353346943855286
+      },
+      "1PL": {
+        "AUC": 0.8308840918668787,
+        "LogLoss": 0.49881379554641153,
+        "Brier": 0.1648854423907816
+      },
+      "2PL": {
+        "AUC": 0.8326767018451338,
+        "LogLoss": 0.49452450652916025,
+        "Brier": 0.1638611992164104
+      },
+      "3PL": {
+        "AUC": 0.8343269170614533,
+        "LogLoss": 0.491451728719705,
+        "Brier": 0.16302470513402004
+      }
+    },
+    "fit": {
+      "1PL": {
+        "logLik": -34178.8050830619,
+        "k": 417,
+        "AIC": 69191.6101661238,
+        "BIC": 71077.32286296076
+      },
+      "2PL": {
+        "logLik": -33450.4162066878,
+        "k": 832,
+        "AIC": 68564.8324133756,
+        "BIC": 72327.21362145316
+      },
+      "3PL": {
+        "logLik": -33170.55069052406,
+        "k": 1248,
+        "AIC": 68837.10138104812,
+        "BIC": 74480.67319316448
+      }
+    },
+    "best_by_BIC": "1PL",
+    "eap_var": 0.5514697286516589,
+    "eap_reliability": 0.7743201514918486
+  }
+}

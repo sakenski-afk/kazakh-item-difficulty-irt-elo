@@ -1,0 +1,37 @@
+{
+  "title": "Text-based item difficulty estimation, IRT calibration and learner performance prediction on a Kazakh–Russian gamified learning platform: code",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "description": "Code accompanying the article 'Text-Based Item Difficulty Estimation, IRT Calibration and Learner Performance Prediction on a Kazakh–Russian Gamified Learning Platform' (IJACSA). Part 1 predicts item difficulty from text (TF-IDF, sentence embeddings, fine-tuned mBERT / XLM-RoBERTa / KazRoBERTa). Part 2 calibrates tournament items with 1PL/2PL/3PL IRT, validates text-based predictions on new tournament items and tests text-based priors in a calibration simulation. Part 3 compares Elo, Glicko-2, TrueSkill and machine-learning models of learner proficiency. Data source: Aqyl Battle, a Kazakh-Russian quiz learning game. Raw data (question texts, learner-level records) are not redistributed; reported result tables and figures are included.",
+  "creators": [
+    {
+      "name": "Kulatay, Aibolat",
+      "affiliation": "Department of Artificial Intelligence and BIG DATA, al-Farabi Kazakh National University, Almaty, Kazakhstan"
+    },
+    {
+      "name": "Zhaisanova, Dinara",
+      "affiliation": "Department of Artificial Intelligence and BIG DATA, al-Farabi Kazakh National University, Almaty, Kazakhstan"
+    },
+    {
+      "name": "Kulambayev, Bakhytzhan",
+      "affiliation": "Higher School of Telecommunications, Turan University, Almaty, Kazakhstan"
+    },
+    {
+      "name": "Mambetov, Saken",
+      "affiliation": "Higher School of Information Technologies, Turan University, Almaty, Kazakhstan"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "educational data mining",
+    "item difficulty estimation",
+    "item response theory",
+    "transformer models",
+    "Elo rating",
+    "Kazakh language",
+    "gamified learning",
+    "Aqyl Battle"
+  ],
+  "language": "eng"
+}

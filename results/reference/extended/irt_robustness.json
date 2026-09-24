@@ -1,0 +1,147 @@
+{
+  "data": {
+    "responses": 67990,
+    "learners": 680,
+    "items": 416
+  },
+  "A_new_learner_holdout": {
+    "test_learners": 135,
+    "target_responses": 6610,
+    "observed_responses": 6688,
+    "results": {
+      "Item p-value": {
+        "AUC": 0.7964373417710295,
+        "LogLoss": 0.5428041759785812,
+        "Brier": 0.18158344799830733
+      },
+      "Item + person logit (additive)": {
+        "AUC": 0.8062704378843704,
+        "LogLoss": 0.5516716971864253,
+        "Brier": 0.1840830530056452
+      },
+      "1PL": {
+        "AUC": 0.8166766510292168,
+        "LogLoss": 0.5170034756484077,
+        "Brier": 0.1729812408613796
+      },
+      "2PL": {
+        "AUC": 0.8207188946354063,
+        "LogLoss": 0.5102250803236635,
+        "Brier": 0.1706433154322208
+      },
+      "3PL": {
+        "AUC": 0.8228532679476578,
+        "LogLoss": 0.5067436829759701,
+        "Brier": 0.16951915735677264
+      }
+    }
+  },
+  "B_information_criteria": {
+    "1PL (ML)": {
+      "logLik": -34145.72423302178,
+      "k": 417,
+      "AIC": 69125.44846604356,
+      "BIC_N_learners": 71011.16116288051,
+      "BIC_N_responses": 72931.4558023986
+    },
+    "2PL (ML)": {
+      "logLik": -33353.707755710966,
+      "k": 832,
+      "AIC": 68371.41551142193,
+      "BIC_N_learners": 72133.7967194995,
+      "BIC_N_responses": 75965.17595230299
+    },
+    "1PL (MAP, log-likelihood at MAP estimate)": {
+      "logLik": -34178.80507646159,
+      "k": 417,
+      "AIC": 69191.61015292318,
+      "BIC_N_learners": 71077.32284976014,
+      "BIC_N_responses": 72997.61748927823
+    },
+    "2PL (MAP, log-likelihood at MAP estimate)": {
+      "logLik": -33450.416207275994,
+      "k": 832,
+      "AIC": 68564.83241455199,
+      "BIC_N_learners": 72327.21362262956,
+      "BIC_N_responses": 76158.59285543305
+    },
+    "3PL (MAP, log-likelihood at MAP estimate)": {
+      "logLik": -33170.550689122356,
+      "k": 1248,
+      "AIC": 68837.10137824471,
+      "BIC_N_learners": 74480.67319036106,
+      "BIC_N_responses": 80227.7420395663
+    },
+    "LR_test_1PL_vs_2PL_ML": {
+      "LR": 1584.0329546216235,
+      "df": 415,
+      "p": 7.002588660383737e-136,
+      "caveat": "ML 2PL has non-finite discriminations for some items (see C); LR test not reported in the paper"
+    }
+  },
+  "C_discrimination_uncertainty": {
+    "ML_2PL_items_a_below_0.05_or_above_20": 21,
+    "ML_2PL_a_range": [
+      1.7439256442246835e-07,
+      5508.806058616508
+    ],
+    "common_a_1PL_MAP": 0.7472743211861202,
+    "a_2PL_MAP_range": [
+      0.28910844879964237,
+      3.3921537086303486
+    ],
+    "median_posterior_SE_log_a": 0.2717261658023634,
+    "n_items_95CI_excludes_common_a": 164,
+    "share_items_95CI_excludes_common_a": 0.3942307692307692,
+    "n_items_a_below_0.5": 44,
+    "n_items_upper_95CI_below_0.5": 0,
+    "sd_log_a": 0.47931191164679626,
+    "rms_posterior_SE_log_a": 0.2719439047972837
+  },
+  "D_3PL_prior_sensitivity": {
+    "Beta(5,17) [reported]": {
+      "prior_mean": 0.22727272727272727,
+      "mean_c": 0.2079219904925155,
+      "sd_c": 0.04258780441716545,
+      "logLik": -33170.550689122356,
+      "heldout_AUC": 0.8343269170614533,
+      "heldout_LogLoss": 0.4914517283104343
+    },
+    "Beta(2.5,7.5)": {
+      "prior_mean": 0.25,
+      "mean_c": 0.2099429249769413,
+      "sd_c": 0.06863833925806527,
+      "logLik": -33133.617363022786,
+      "heldout_AUC": 0.83416449937886,
+      "heldout_LogLoss": 0.4918040962740791
+    },
+    "Beta(1,3)": {
+      "prior_mean": 0.25,
+      "mean_c": 0.1159053468503867,
+      "sd_c": 0.14425965606231686,
+      "logLik": -33106.35546478262,
+      "heldout_AUC": 0.8335323594459718,
+      "heldout_LogLoss": 0.49424181497568737
+    },
+    "Beta(2,18)": {
+      "prior_mean": 0.1,
+      "mean_c": 0.07379443177688616,
+      "sd_c": 0.036554471944021796,
+      "logLik": -33283.21244401524,
+      "heldout_AUC": 0.8334868137466201,
+      "heldout_LogLoss": 0.49294545020015235
+    }
+  },
+  "E_item_fit_local_dependence": {
+    "infit_share_in_0.7_1.3": 0.9975961538461539,
+    "outfit_share_in_0.7_1.3": 0.8798076923076923,
+    "infit_median": 0.9867387560470486,
+    "outfit_median": 0.9936989825387967,
+    "Q3_pairs": 77003,
+    "Q3_mean": -0.004499329161807417,
+    "Q3star_share_abs_gt_0.2": 0.12634572678986533,
+    "Q3_mean_same_category": 0.0029997663201264723,
+    "Q3_mean_different_category": -0.00695906455382764,
+    "pairs_same_category": 19019
+  }
+}
