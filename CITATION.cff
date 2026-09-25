@@ -5,6 +5,8 @@ version: 1.0.0
 date-released: 2026-09-24
 license: MIT
 type: software
+doi: 10.5281/zenodo.22961905
+repository-code: "https://github.com/sakenski-afk/kazakh-item-difficulty-irt-elo"
 authors:
   - family-names: Kulatay
     given-names: Aibolat

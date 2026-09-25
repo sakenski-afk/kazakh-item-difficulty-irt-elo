@@ -1,5 +1,7 @@
 # Item Difficulty and Learner Performance on a Kazakh–Russian Gamified Learning Platform
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22961905.svg)](https://doi.org/10.5281/zenodo.22961905)
+
 Code accompanying the paper
 
 > **Text-Based Item Difficulty Estimation, IRT Calibration and Learner Performance Prediction on a Kazakh–Russian Gamified Learning Platform.**
@@ -72,7 +74,7 @@ The data are an anonymised export of the Aqyl Battle database, owned by the plat
 
 ## Open data
 
-Item-level statistics without texts or learner data are published separately on Zenodo (see the dataset record). They are built with `python src/export_open_data.py --out <dir> --private_dir <dir>`. Platform ids are replaced by random ids, and the id mapping is written to `--private_dir` and must not be published. The package contains `verify_open_data.py`, which recomputes the key results of the paper from the open files alone.
+Item-level statistics without texts or learner data are published separately on Zenodo: [doi:10.5281/zenodo.22960055](https://doi.org/10.5281/zenodo.22960055). They are built with `python src/export_open_data.py --out <dir> --private_dir <dir>`. Platform ids are replaced by random ids, and the id mapping is written to `--private_dir` and must not be published. The package contains `verify_open_data.py`, which recomputes the key results of the paper from the open files alone.
 
 ## Reproducing the results
 
@@ -102,7 +104,7 @@ Approximate run times on the reference machine:
 
 ## Citation
 
-If you use this code, please cite the paper and the software (see [`CITATION.cff`](CITATION.cff)). A DOI for this software release is minted by Zenodo when the GitHub release is archived.
+If you use this code, please cite the paper and the software (see [`CITATION.cff`](CITATION.cff)). Software (release v1.0.0): [doi:10.5281/zenodo.22961905](https://doi.org/10.5281/zenodo.22961905). Open data: [doi:10.5281/zenodo.22960055](https://doi.org/10.5281/zenodo.22960055).
 
 ## License
 
