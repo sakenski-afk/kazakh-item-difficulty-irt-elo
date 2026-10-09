@@ -1,8 +1,8 @@
 {
-  "title": "Text-based item difficulty estimation, IRT calibration and learner performance prediction on a Kazakh–Russian gamified learning platform: code",
+  "title": "Predicting item difficulty and learner performance on a bilingual gamified quiz platform: code",
   "upload_type": "software",
-  "version": "1.0.0",
-  "description": "Code accompanying the article 'Text-Based Item Difficulty Estimation, IRT Calibration and Learner Performance Prediction on a Kazakh–Russian Gamified Learning Platform' (IJACSA). Part 1 predicts item difficulty from text (TF-IDF, sentence embeddings, fine-tuned mBERT / XLM-RoBERTa / KazRoBERTa). Part 2 calibrates tournament items with 1PL/2PL/3PL IRT, validates text-based predictions on new tournament items and tests text-based priors in a calibration simulation. Part 3 compares Elo, Glicko-2, TrueSkill and machine-learning models of learner proficiency. Data source: Aqyl Battle, a Kazakh-Russian quiz learning game. Raw data (question texts, learner-level records) are not redistributed; reported result tables and figures are included.",
+  "version": "1.1.0",
+  "description": "Code accompanying the article 'Predicting Item Difficulty and Learner Performance on a Bilingual Gamified Quiz Platform' (IJACSA). Part 1 predicts the observed difficulty of quiz items from text (TF-IDF, sentence embeddings, fine-tuned mBERT / XLM-RoBERTa / KazRoBERTa). Part 2 calibrates tournament items with 1PL/2PL/3PL IRT, checks connectivity, dimensionality and local dependence, validates text-based predictions on new tournament items (correlation and screening of the hardest/easiest deciles) and tests text-based priors in a cross-fitted calibration simulation. Part 3 compares Elo, Glicko-2, TrueSkill and machine-learning models of learner performance, with sensitivity analyses and two-way player bootstrap intervals. Data source: Aqyl Battle, a Kazakh-Russian quiz learning game. Raw data (question texts, learner-level records) are not redistributed; reported result tables and figures are included. v1.1.0 adds the analyses of the peer-review revision and fixes an environment-dependent stem normalisation in prepare_items.py.",
   "creators": [
     {
       "name": "Kulatay, Aibolat",

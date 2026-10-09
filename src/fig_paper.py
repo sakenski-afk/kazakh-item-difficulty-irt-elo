@@ -7,7 +7,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.stats import pearsonr
 
-plt.rcParams.update({"font.size": 8, "axes.titlesize": 8, "axes.labelsize": 8, "font.family": "DejaVu Sans"})
+plt.rcParams.update({"font.size": 8, "axes.titlesize": 8, "axes.labelsize": 8, "font.family": "Times New Roman", "mathtext.fontset": "stix"})
 C = "#1f5f8b"
 EN = {16: "Medicine", 10: "Sport", 6: "Literature", 15: "Brain training", 7: "Literacy", 4: "Tech. progress",
       17: "Cinema & TV", 12: "Free topic", 1: "History of KZ", 5: "Art & culture", 13: "World history",
@@ -32,7 +32,7 @@ with plt.rc_context({"font.family": "Times New Roman", "mathtext.fontset": "stix
     ax.set_xlim(-0.8, 0.4); ax.set_ylim(-1.6, 0.27)
     ax.set_xlabel("Mean item difficulty in item bank (logit)"); ax.set_ylabel("Elo category difficulty")
     ax.legend(fontsize=8.5, loc="lower right", frameon=False, handletextpad=0.3, borderaxespad=0.2)
-    fig.tight_layout(pad=0.3); fig.savefig("results/figures/paper_fig5_categories.png", dpi=300); plt.close(fig)
+    fig.tight_layout(pad=0.3); fig.savefig("results/figures/paper_fig5_categories.png", dpi=1200); plt.close(fig)
 
 # cold start on all items with text (sensitivity figure)
 tour = pd.read_csv("data/tournament_items.csv").set_index("id")
@@ -45,7 +45,7 @@ ax.scatter(p, tour.b_2PL, s=7, alpha=0.55, color=C, lw=0)
 k, b0 = np.polyfit(p, tour.b_2PL, 1); xs = np.linspace(p.min(), p.max(), 10); ax.plot(xs, k * xs + b0, color="#9a5a00", lw=1.2)
 ax.set_xlabel(f"Difficulty predicted from text ({label}, logit)"); ax.set_ylabel("IRT 2PL difficulty b")
 ax.text(0.03, 0.95, f"n = {len(p)}, r = {r:.2f}", transform=ax.transAxes, va="top", fontsize=7.5)
-fig.tight_layout(); fig.savefig("results/figures/paper_fig4_coldstart.png", dpi=300); plt.close(fig)
+fig.tight_layout(); fig.savefig("results/figures/paper_fig4_coldstart.png", dpi=1200); plt.close(fig)
 
 # Fig. 2: cross-lingual
 it = pd.read_csv("data/items.csv.gz"); idx = it.set_index("id")
@@ -57,12 +57,12 @@ ax.plot([-4, 4], [-4, 4], color="#8a96a3", lw=0.9, ls="--")
 ax.set_xlim(-4, 4); ax.set_ylim(-4, 4)
 ax.set_xlabel("Difficulty of Kazakh original (logit)"); ax.set_ylabel("Difficulty of Russian translation (logit)")
 ax.text(0.03, 0.95, f"n = {len(br):,} pairs, r = {pearsonr(bk, br)[0]:.2f}\nmean shift = {np.mean(br - bk):+.2f}", transform=ax.transAxes, va="top", fontsize=7.5)
-fig.tight_layout(); fig.savefig("results/figures/paper_fig3_crosslingual.png", dpi=300); plt.close(fig)
+fig.tight_layout(); fig.savefig("results/figures/paper_fig3_crosslingual.png", dpi=1200); plt.close(fig)
 
 # difficulty distribution (supplementary figure, not in the article)
 fig, ax = plt.subplots(figsize=(3.4, 2.3))
 ax.hist(it.p, bins=40, color=C, edgecolor="white", lw=0.3)
 ax.set_xlabel("Proportion correct"); ax.set_ylabel("Number of items")
 ax.axvline(it.p.mean(), color="#9a5a00", lw=1); ax.text(it.p.mean() + 0.02, ax.get_ylim()[1] * 0.92, f"mean {it.p.mean():.2f}", fontsize=7)
-fig.tight_layout(); fig.savefig("results/figures/paper_fig2_hist.png", dpi=300); plt.close(fig)
+fig.tight_layout(); fig.savefig("results/figures/paper_fig2_hist.png", dpi=1200); plt.close(fig)
 print("ok")

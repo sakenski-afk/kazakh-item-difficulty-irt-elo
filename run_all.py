@@ -22,6 +22,12 @@ STAGES = [
     ("figures", ["src/fig_paper.py"]),
     ("figures_extended", ["src/figures_extended.py"]),
     ("framework", ["src/fig_framework.py"]),
+    ("rev_part1", ["src/rev_part1_text.py"]),          # revision: near duplicates, truncation, ablation CIs, screening
+    ("rev_part2", ["src/rev_part2_irt.py"]),           # revision: connectivity, dimensionality, Q3 null, cross-fitted calibration
+    ("rev_part2b", ["src/rev_part2b_scale.py"]),       # revision: cold-start sensitivity to the common-scale assumption
+    ("rev_part3", ["src/rev_part3_ratings.py"]),       # revision: rating-model sensitivity, draws, two-way player bootstrap
+    ("rev_part3_table", ["src/rev_part3_table.py"]),
+    ("rev_figures", ["src/rev_figures.py"]),
     ("compare", ["src/compare_to_reference.py"]),
 ]
 

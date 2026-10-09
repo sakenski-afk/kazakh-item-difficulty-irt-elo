@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import NullFormatter, FixedLocator
 from scipy.stats import pearsonr
 
-plt.rcParams.update({"font.size": 8, "font.family": "DejaVu Sans"})
+plt.rcParams.update({"font.size": 8, "font.family": "Times New Roman", "mathtext.fontset": "stix"})
 C, OUT = "#1f5f8b", "results/extended/"
 
 # Fig. 3: cold-start validation on items without duplicates in the item bank
@@ -21,7 +21,7 @@ k, b0 = np.polyfit(p, cl.b_2PL, 1); xs = np.linspace(p.min(), p.max(), 10)
 ax.plot(xs, k * xs + b0, color="#9a5a00", lw=1.2)
 ax.set_xlabel("Difficulty predicted from text (KazRoBERTa, logit)"); ax.set_ylabel("IRT 2PL difficulty b")
 ax.text(0.03, 0.95, f"n = {len(p)}, r = {pearsonr(p, cl.b_2PL)[0]:.2f}", transform=ax.transAxes, va="top", fontsize=7.5)
-fig.tight_layout(); fig.savefig(OUT + "fig4_coldstart_clean.png", dpi=300); plt.close(fig)
+fig.tight_layout(); fig.savefig(OUT + "fig4_coldstart_clean.png", dpi=1200); plt.close(fig)
 
 # calibration experiment: k = 0 (prior only) to 80 responses, bootstrap 95% CIs over items as error bars
 F = json.load(open(OUT + "calibration_experiment.json"))
@@ -38,5 +38,5 @@ for pn, col, mk, lab, dx in style:
 ax.set_xticks(pos); ax.set_xticklabels([str(k) for k in KS])
 ax.set_xlabel("Responses to the new item (k; 0 = prior only)"); ax.set_ylabel("RMSE of difficulty (logit)")
 ax.legend(frameon=False, fontsize=7)
-fig.tight_layout(); fig.savefig(OUT + "fig_calibration.png", dpi=300); plt.close(fig)
+fig.tight_layout(); fig.savefig(OUT + "fig_calibration.png", dpi=1200); plt.close(fig)
 print("figures written")

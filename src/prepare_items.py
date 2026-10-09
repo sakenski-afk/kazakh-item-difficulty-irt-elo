@@ -57,7 +57,9 @@ q = q.merge(opts, left_on="id", right_index=True, how="left")
 q["has_options"] = q.key_text.notna().astype(int)
 
 # leakage-safe split: a kz original and its ru translation, and identical stems, share one group
-q["norm"] = q.text.str.lower().str.replace(r"[^\w]+", " ", regex=True).str.strip()
+# Python re (Unicode \w); pandas>=3 with pyarrow strings uses RE2, whose \w is ASCII-only and would
+# collapse Cyrillic stems into one group
+q["norm"] = [re.sub(r"[^\w]+", " ", t.lower()).strip() for t in q.text.astype(str)]
 parent = {}
 def find(x):
     while parent.get(x, x) != x:

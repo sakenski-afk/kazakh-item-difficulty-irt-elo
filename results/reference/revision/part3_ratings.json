@@ -1,0 +1,293 @@
+{
+  "A_reconstruction": {
+    "games_rows": 100000,
+    "games_id_range": [
+      1654,
+      277131
+    ],
+    "games_window": [
+      "2022-04-23 13:25:05",
+      "2022-07-21 14:52:09"
+    ],
+    "games_self_play_removed": 0,
+    "games_status": {
+      "end": 99961,
+      "surrender": 39
+    },
+    "players": 5920,
+    "draw_share": 0.07203,
+    "matches_rows": 100000,
+    "matches_games": 20000,
+    "matches_games_found_in_games_table": 20000,
+    "matches_window": [
+      "2022-06-23 13:25:05",
+      "2022-07-13 14:12:37"
+    ],
+    "rounds_per_game": {
+      "5": 20000
+    },
+    "rounds_with_identical_created_at_within_game_share": 0.9768,
+    "rounds_missing_category": 37454,
+    "rounds_missing_user_answers": 43497,
+    "rounds_missing_opponent_answers": 43102,
+    "rounds_with_category_and_at_least_one_player_answers": 62545
+  },
+  "B_rating_sensitivity": {
+    "Elo": {
+      "validation_logloss_by_K": {
+        "16": 0.552409842608633,
+        "32": 0.5162635983617148,
+        "48": 0.49944823431032365,
+        "64": 0.49071777774364755,
+        "80": 0.48638431586391645,
+        "96": 0.48482572946814423,
+        "112": 0.4852011543130534,
+        "128": 0.48702607030627665,
+        "160": 0.4939272982019015,
+        "192": 0.5041474929072406
+      },
+      "K_selected": 96,
+      "test": {
+        "AUC": 0.8283076471124039,
+        "LogLoss": 0.5103479173181196,
+        "Brier": 0.16930813608081036
+      }
+    },
+    "Glicko-2": {
+      "one game": {
+        "tau_selected": 0.2,
+        "validation_logloss": 0.5155233682588876,
+        "test": {
+          "AUC": 0.8125896071208603,
+          "LogLoss": 0.5281306281699152,
+          "Brier": 0.17698854721934767
+        },
+        "periods": 100000
+      },
+      "one hour": {
+        "tau_selected": 0.5,
+        "validation_logloss": 0.5428056890705132,
+        "test": {
+          "AUC": 0.7987946489623192,
+          "LogLoss": 0.543405038599756,
+          "Brier": 0.1831609733374243
+        },
+        "periods": 353
+      },
+      "one day": {
+        "tau_selected": 1.2,
+        "validation_logloss": 0.5970234911966684,
+        "test": {
+          "AUC": 0.761974635073841,
+          "LogLoss": 0.5792322870908714,
+          "Brier": 0.19805287639240207
+        },
+        "periods": 28
+      },
+      "one week": {
+        "tau_selected": 1.2,
+        "validation_logloss": 0.6947206450802325,
+        "test": {
+          "AUC": 0.7205378642988065,
+          "LogLoss": 0.6103888696734591,
+          "Brier": 0.21193865432387196
+        },
+        "periods": 7
+      }
+    },
+    "Glicko-2_selected_by_validation": "one game",
+    "TrueSkill": {
+      "default": {
+        "params": {
+          "beta": 4.166666666666667,
+          "tau": 0.08333333333333333,
+          "sigma0": 8.333333333333334,
+          "draw_probability": 0.07
+        },
+        "validation_logloss": 0.5337239262269238,
+        "test": {
+          "AUC": 0.799027190412503,
+          "LogLoss": 0.5434775569718259,
+          "Brier": 0.18309722017492025
+        }
+      },
+      "tuned": {
+        "params": {
+          "beta": 2.0833333333333335,
+          "tau": 0.3333333333333333,
+          "sigma0": 4.166666666666667,
+          "draw_probability": 0.07
+        },
+        "validation_logloss": 0.49678877578056085,
+        "test": {
+          "AUC": 0.8231792690687615,
+          "LogLoss": 0.5165737687227758,
+          "Brier": 0.1718622782405028
+        }
+      },
+      "tuned_with_draw_margin_conditional": {
+        "test": {
+          "AUC": 0.8231944202230417,
+          "LogLoss": 0.5178290781833904,
+          "Brier": 0.17206589420202378
+        }
+      },
+      "grid_size": 36
+    }
+  },
+  "C_draws": {
+    "test_games_all": 20000,
+    "test_draws": 1732,
+    "note": "Elo and Glicko-2 give an expected score E = P(win) + 0.5 P(draw); on decisive games E is used as P(win | decisive).",
+    "expected_score_Brier_all_test_games_incl_draws": {
+      "Elo": 0.15977614322670944,
+      "Glicko-2 (one game)": 0.16531017700568437,
+      "TrueSkill (tuned)": 0.16160869687861357
+    },
+    "trueskill_mean_predicted_draw_probability_test": 0.041283623595968405,
+    "observed_draw_share_test": 0.0866,
+    "AUC_draw_vs_decisive_from_trueskill_pdraw": 0.6296753216543423
+  },
+  "D_duel_uncertainty": {
+    "test_decisive_games": 18268,
+    "players_in_test": 3726,
+    "days_in_test": 5,
+    "B": 1000,
+    "method": "two-way player bootstrap: each player receives a Poisson(1) weight, a game the product of its two players' weights; day-block bootstrap resamples calendar days",
+    "test_AUC": {
+      "Elo": 0.8283076471124039,
+      "Glicko-2 (one game)": 0.8125896071208603,
+      "TrueSkill (default)": 0.799027190412503,
+      "TrueSkill (tuned)": 0.8231792690687615,
+      "LightGBM (history + Elo)": 0.8302030996648564,
+      "Logistic regression": 0.804054023358453
+    },
+    "differences": {
+      "Elo minus Glicko-2 (one game)": {
+        "delta_AUC": 0.015718039991543642,
+        "CI_two_way_player": [
+          0.010574685913630697,
+          0.02151263516565262
+        ],
+        "CI_day_block": [
+          0.014653738650769577,
+          0.0172863932965851
+        ],
+        "CI_naive_game": [
+          0.01250650582086923,
+          0.0184528598976421
+        ]
+      },
+      "Elo minus TrueSkill (default)": {
+        "delta_AUC": 0.02928045669990087,
+        "CI_two_way_player": [
+          0.02242719420221332,
+          0.03713151720082897
+        ],
+        "CI_day_block": [
+          0.02779353858165249,
+          0.030201832031333975
+        ],
+        "CI_naive_game": [
+          0.02597131190591787,
+          0.032959734404123475
+        ]
+      },
+      "Elo minus TrueSkill (tuned)": {
+        "delta_AUC": 0.005128378043642412,
+        "CI_two_way_player": [
+          0.0018796600446591124,
+          0.008272434498159793
+        ],
+        "CI_day_block": [
+          0.004430281244182432,
+          0.005822829173250388
+        ],
+        "CI_naive_game": [
+          0.003337542164774082,
+          0.006786515508919722
+        ]
+      },
+      "LightGBM (history + Elo) minus Elo": {
+        "delta_AUC": 0.0018954525524524923,
+        "CI_two_way_player": [
+          -0.001904988358303883,
+          0.0057591169896398335
+        ],
+        "CI_day_block": [
+          -0.0005266189933499366,
+          0.003325287866026594
+        ],
+        "CI_naive_game": [
+          -0.0002716539795385635,
+          0.003750486612615277
+        ]
+      },
+      "Elo minus Logistic regression": {
+        "delta_AUC": 0.024253623753950904,
+        "CI_two_way_player": [
+          0.015957597189935304,
+          0.03316389778223896
+        ],
+        "CI_day_block": [
+          0.02244487216670632,
+          0.028306484044189006
+        ],
+        "CI_naive_game": [
+          0.020336798514989072,
+          0.028394074669987106
+        ]
+      }
+    }
+  },
+  "E_response_ordering": {
+    "game creation time, round (as reported)": {
+      "responses": 322046,
+      "Elo": {
+        "alpha_beta": [
+          0.1,
+          0.001
+        ],
+        "AUC": 0.6835492226995566,
+        "LogLoss": 0.6054988576380792
+      },
+      "Elo + learner x category": {
+        "alpha_beta": [
+          0.2,
+          0.02
+        ],
+        "AUC": 0.6973752128996178,
+        "LogLoss": 0.5969119515729562
+      },
+      "delta_AUC": 0.013825990200061145,
+      "delta_AUC_CI_learner_cluster": [
+        0.011392674731008212,
+        0.016441203223553778
+      ]
+    },
+    "round completion time (updated_at)": {
+      "responses": 322046,
+      "Elo": {
+        "alpha_beta": [
+          0.1,
+          0.001
+        ],
+        "AUC": 0.6824549178548357,
+        "LogLoss": 0.6023028100577973
+      },
+      "Elo + learner x category": {
+        "alpha_beta": [
+          0.2,
+          0.02
+        ],
+        "AUC": 0.696814073746956,
+        "LogLoss": 0.5937447976633016
+      },
+      "delta_AUC": 0.014359155892120334,
+      "delta_AUC_CI_learner_cluster": [
+        0.012188489750581784,
+        0.01666982008326224
+      ]
+    }
+  }
+}

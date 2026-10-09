@@ -16,7 +16,7 @@ def box(x, y, w, h, title, lines, fill):
     ax.text(x + w / 2, y + h - 6.8, "\n".join(lines), ha="center", va="top", fontsize=9.6, color=T, linespacing=1.3)
 
 box(XS[0], 36, W, 12.5, "D1  Item bank", ["30,444 items, 177.5 M attempts", "kz / ru / en, 50 categories"], "white")
-box(XS[1], 36, W, 12.5, "D2  Tournament responses", ["67,990 responses, 680 learners", "416 items (2025–2026)"], "white")
+box(XS[1], 36, W, 12.5, "D2  Tournament responses", ["67,990 responses, 680 learners", "416 items (May 2025)"], "white")
 box(XS[2], 36, W, 12.5, "D3  Duels", ["100,000 games, 5,920 players", "322,046 responses (2022)"], "white")
 box(XS[0], 5, W, 21.5, "Part 1  Difficulty from text",
     ["TF-IDF, embeddings + Ridge", "fine-tuned mBERT, XLM-R,", "KazRoBERTa", r"target: logit difficulty $b$"], FILL)
@@ -37,6 +37,6 @@ ax.annotate("", xy=(centers[2], 4.2), xytext=(centers[0], 4.2),
             arrowprops=dict(arrowstyle="<|-|>", color=C, lw=1.4, connectionstyle="arc3,rad=0.1"))
 ax.text(50, -4.3, r"category level ($d_c$): Elo difficulty vs. item-bank difficulty", ha="center", fontsize=9.6, color=C)
 fig.tight_layout(pad=0.2)
-fig.savefig("results/figures/fig_framework.png", dpi=300)
+fig.savefig("results/figures/fig_framework.png", dpi=1200)
 plt.close(fig)
 print("ok")

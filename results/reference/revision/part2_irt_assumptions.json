@@ -1,0 +1,254 @@
+{
+  "A_design_connectivity": {
+    "responses": 67990,
+    "learners": 680,
+    "items": 416,
+    "density": 0.24034926470588236,
+    "tournament_series": {
+      "Regional cup": {
+        "items": 50,
+        "rounds": 34,
+        "learners": 549,
+        "responses": 22054,
+        "dates": [
+          "2025-05-30",
+          "2025-05-31"
+        ]
+      },
+      "Famous People": {
+        "items": 184,
+        "rounds": 6,
+        "learners": 229,
+        "responses": 23932,
+        "dates": [
+          "2025-05-14",
+          "2025-05-16"
+        ]
+      },
+      "History of Kazakhstan": {
+        "items": 182,
+        "rounds": 6,
+        "learners": 213,
+        "responses": 22004,
+        "dates": [
+          "2025-05-21",
+          "2025-05-23"
+        ]
+      }
+    },
+    "rounds_total": 46,
+    "learners_in_more_than_one_round": 467,
+    "learners_by_number_of_series": {
+      "1": 455,
+      "2": 139,
+      "3": 86
+    },
+    "learner_item_graph_connected_components": 1,
+    "item_pairs_with_common_learners_share": 1.0,
+    "item_pairs_with_ge50_common_learners_share": 0.8920644114921223,
+    "cross_series_item_pairs_with_common_learners_share": 1.0,
+    "median_responses_per_learner": 50.0,
+    "median_responses_per_item": 130.0,
+    "learners_in_both_Regional cup_and_Famous People": 146,
+    "learners_in_both_Regional cup_and_History of Kazakhstan": 133,
+    "learners_in_both_Famous People_and_History of Kazakhstan": 118
+  },
+  "B_common_scale": {
+    "model": "between-item 3-dimensional 2PL, one correlated trait per tournament series, 15^3 Gauss-Hermite nodes",
+    "latent_correlations": {
+      "Regional cup - Famous People": 0.4660990078775958,
+      "Regional cup - History of Kazakhstan": 0.495171043260242,
+      "Famous People - History of Kazakhstan": 0.8747958960237702
+    },
+    "logLik_1D_2PL": -33450.4162066878,
+    "logLik_3D_2PL": -33332.11044706451,
+    "LR": 236.61151924658043,
+    "extra_parameters": 3,
+    "AIC_1D": 68564.8324133756,
+    "AIC_3D": 68334.22089412902,
+    "BIC_1D": 72327.21362145316,
+    "BIC_3D": 72110.1683806011,
+    "heldout_1D": {
+      "AUC": 0.8326767018451338,
+      "LogLoss": 0.49452450652916025
+    },
+    "heldout_3D": {
+      "AUC": 0.8347026261134634,
+      "LogLoss": 0.49133047778104944
+    },
+    "per_series_EAP_correlations": {
+      "Regional cup vs Famous People": {
+        "learners": 146,
+        "r_EAP": 0.39337300619259147,
+        "reliabilities": [
+          0.6685663185952873,
+          0.8839269447359431
+        ],
+        "r_disattenuated": 0.5117102560889993
+      },
+      "Regional cup vs History of Kazakhstan": {
+        "learners": 133,
+        "r_EAP": 0.3094061040030705,
+        "reliabilities": [
+          0.6742026237119015,
+          0.8898175682979009
+        ],
+        "r_disattenuated": 0.39946908065842124
+      },
+      "Famous People vs History of Kazakhstan": {
+        "learners": 118,
+        "r_EAP": 0.7755647478433493,
+        "reliabilities": [
+          0.8799331846369329,
+          0.9076107053664388
+        ],
+        "r_disattenuated": 0.8678474816098763
+      }
+    }
+  },
+  "C_local_dependence": {
+    "observed": {
+      "mean": -0.0044993293008546535,
+      "share_abs_q3star_gt_0.2": 0.12634572678986533,
+      "q99": 0.3320818136025778,
+      "q999": 0.5488854045616682,
+      "max": 1.0039309269317211,
+      "pairs": 77003
+    },
+    "null_replications": 30,
+    "null_share_abs_q3star_gt_0.2": {
+      "mean": 0.10446822418174184,
+      "range": [
+        0.10051556432866252,
+        0.1078659273015337
+      ]
+    },
+    "null_q99_mean": 0.3130439497802438,
+    "null_max_range": [
+      1.0008068061291202,
+      1.0039536131452795
+    ],
+    "pooled_null_abs_q3star_99.9th_percentile": 0.5312203462698561,
+    "observed_pairs_above_null_99.9": 99,
+    "expected_pairs_above_null_99.9": 77.003,
+    "observed_pairs_above_null_99.9_same_series": 35,
+    "observed_mean_q3star_same_series": 0.005585359365958784,
+    "observed_mean_q3star_different_series": -0.004541301820660894
+  },
+  "D_irt_model_differences_learner_cluster_bootstrap": {
+    "test_responses": 6925,
+    "learners": 673,
+    "B": 2000,
+    "results": {
+      "2PL minus 1PL": {
+        "delta_AUC": 0.001792609978255033,
+        "AUC_CI": [
+          -0.0002754781230959346,
+          0.0035266134374006878
+        ],
+        "delta_LogLoss": -0.004289289017251285,
+        "LogLoss_CI": [
+          -0.007350093709399498,
+          -0.0011986836632610326
+        ]
+      },
+      "3PL minus 2PL": {
+        "delta_AUC": 0.0016502152163195838,
+        "AUC_CI": [
+          -3.0257667208893886e-05,
+          0.003429558004356594
+        ],
+        "delta_LogLoss": -0.0030727778094552516,
+        "LogLoss_CI": [
+          -0.005864913413537076,
+          -0.0004984848826097978
+        ]
+      },
+      "3PL minus 1PL": {
+        "delta_AUC": 0.003442825194574617,
+        "AUC_CI": [
+          0.0007598978762075993,
+          0.006164406895652615
+        ],
+        "delta_LogLoss": -0.007362066826706537,
+        "LogLoss_CI": [
+          -0.01236802322111374,
+          -0.002664349133986586
+        ]
+      },
+      "1PL minus additive": {
+        "delta_AUC": 0.010801764148212989,
+        "AUC_CI": [
+          0.0071924346970937275,
+          0.014530731760496945
+        ],
+        "delta_LogLoss": -0.0257241398424764,
+        "LogLoss_CI": [
+          -0.03260276494110408,
+          -0.019509079337686974
+        ]
+      }
+    }
+  },
+  "E_model_choice_reference": {
+    "pearson_b": {
+      "1PL-2PL": 0.9393557740867196,
+      "1PL-3PL": 0.9559344369878415,
+      "2PL-3PL": 0.9650659647516479
+    },
+    "spearman_b": {
+      "1PL-2PL": 0.9649267551379852,
+      "1PL-3PL": 0.9740591971687714,
+      "2PL-3PL": 0.9837544804220486
+    },
+    "pearson_b_vs_observed_logit_difficulty": {
+      "1PL": 0.9989518719088151,
+      "2PL": 0.9369236495006934,
+      "3PL": 0.9544593327641712
+    },
+    "spearman_b_vs_observed_logit_difficulty": {
+      "1PL": 0.9986967098959897,
+      "2PL": 0.9624292092150186,
+      "3PL": 0.973533172298065
+    },
+    "share_items_p_gt_0.9": 0.1712538226299694,
+    "text_r_by_reference": {
+      "XLM-R large": {
+        "b_1PL": 0.25959603465579617,
+        "b_2PL": 0.26858825796714975,
+        "b_3PL": 0.23833170020247477,
+        "observed_logit": 0.25965739126355475,
+        "b_2PL_without_items_p_gt_0.9": 0.24050646001712356
+      },
+      "KazRoBERTa": {
+        "b_1PL": 0.3395573025566604,
+        "b_2PL": 0.3309192106976278,
+        "b_3PL": 0.3112096960349226,
+        "observed_logit": 0.3414415408534242,
+        "b_2PL_without_items_p_gt_0.9": 0.2455674247021066
+      },
+      "XLM-R base": {
+        "b_1PL": 0.3114765031145801,
+        "b_2PL": 0.31144906340429507,
+        "b_3PL": 0.2923151548906076,
+        "observed_logit": 0.31327708236159724,
+        "b_2PL_without_items_p_gt_0.9": 0.2516322474033124
+      },
+      "mBERT": {
+        "b_1PL": 0.2451501581488335,
+        "b_2PL": 0.25137515411419264,
+        "b_3PL": 0.22694047012987978,
+        "observed_logit": 0.2426237896467895,
+        "b_2PL_without_items_p_gt_0.9": 0.20295543755182233
+      },
+      "TF-IDF": {
+        "b_1PL": 0.23639174436629684,
+        "b_2PL": 0.24002794904606842,
+        "b_3PL": 0.23291686271908377,
+        "observed_logit": 0.2352620478980221,
+        "b_2PL_without_items_p_gt_0.9": 0.18277387269382223
+      }
+    },
+    "n_items_without_p_gt_0.9": 271
+  }
+}

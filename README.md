@@ -1,11 +1,11 @@
-# Item Difficulty and Learner Performance on a Kazakh–Russian Gamified Learning Platform
+# Item Difficulty and Learner Performance on a Bilingual Gamified Quiz Platform
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22961905.svg)](https://doi.org/10.5281/zenodo.22961905)
 
 Code accompanying the paper
 
-> **Text-Based Item Difficulty Estimation, IRT Calibration and Learner Performance Prediction on a Kazakh–Russian Gamified Learning Platform.**
-> A. Kulatay, D. Zhaisanova, B. Kulambayev, and S. Mambetov. *International Journal of Advanced Computer Science and Applications (IJACSA)*, 2026 (submitted).
+> **Predicting Item Difficulty and Learner Performance on a Bilingual Gamified Quiz Platform.**
+> A. Kulatay, D. Zhaisanova, B. Kulambayev, and S. Mambetov. *International Journal of Advanced Computer Science and Applications (IJACSA)*, 2026 (under revision).
 
 Data source: **Aqyl Battle**, a Kazakh–Russian mobile quiz-based learning game. The data were provided by Thousand IT Company LLP. One of the authors (A. Kulatay) is the CEO of Aqyl Battle (see the article's Conflict of Interest statement).
 
@@ -15,7 +15,7 @@ The framework has three parts, each built on a separate, internally consistent s
 |---|---|---|---|
 | 1 | How difficult is a question, judging from its text? | 30,444 items, 177.5 M attempts (Kazakh / Russian / English) | TF-IDF + Ridge, LightGBM, sentence embeddings (LaBSE, mE5-large, BGE-M3) + Ridge, fine-tuned mBERT, XLM-R base/large, KazRoBERTa |
 | 2 | What is the psychometric difficulty of tournament items, and do text predictions transfer to it? | 67,990 responses, 680 learners, 416 items | 1PL / 2PL / 3PL IRT (marginal MAP, Gauss–Hermite quadrature); cold-start validation on 327 new items (347 with text, 20 duplicates of item-bank content excluded); calibration experiment |
-| 3 | How proficient are learners, overall and by subject? | 100,000 duels, 322,046 per-question responses | Elo, Glicko-2, TrueSkill, logistic regression, LightGBM; learner-by-category Elo |
+| 3 | How well can learner performance be predicted, overall and by subject? | 100,000 duels, 322,046 per-question responses | Elo, Glicko-2, TrueSkill, logistic regression, LightGBM; learner-by-category Elo |
 
 Headline results (test sets; see `results/reference/tables/summary.json`):
 
@@ -102,9 +102,25 @@ Approximate run times on the reference machine:
 
 **Determinism.** IRT, the baselines and the rating models are deterministic. Fine-tuning uses fixed seeds, but GPU kernels are not bit-exact, so re-runs can differ in the third decimal.
 
+## Revision analyses (v1.1.0)
+
+Added in response to the reviewers of the IJACSA submission; outputs in `results/revision/`, reference copies in `results/reference/revision/`.
+
+| Script | Content |
+|---|---|
+| `src/rev_part1_text.py` | near-duplicate audit across the D1 partitions; token truncation at 64 tokens; answer-option ablation with group-bootstrap CIs; seed-ensemble rows of Table I; screening of the hardest/easiest deciles; cross-lingual comparison with a category bootstrap and design-effect sensitivity of the Wald tests |
+| `src/rev_part2_irt.py` | connectivity of the tournament data; between-item 3-dimensional 2PL (one trait per tournament series); Yen's Q3 against a parametric-bootstrap null; learner-clustered bootstrap of IRT model differences; effect of the IRT model on the cold-start reference; cross-fitted calibration experiment (disjoint reference half, three treatments of discrimination); screening of new items. `ONLY_CAL=1` re-runs only the calibration and screening parts |
+| `src/rev_part2b_scale.py` | cold-start correlations under the 3-dimensional model, without the regional-cup items and within series |
+| `src/rev_part3_ratings.py` | reconstruction checks of the round records; Elo grid, Glicko-2 with rating periods of one game/hour/day/week, TrueSkill tuned over 36 settings; treatment of draws; two-way (initiator x opponent) player bootstrap and day-block bootstrap; response ordering by round completion time |
+| `src/rev_part3_table.py`, `src/rev_figures.py` | Table VII row for the tuned TrueSkill; Fig. 4 (cross-fitted calibration) |
+
+All figures are drawn in Times New Roman at 1200 dpi.
+
+**Reproducibility fix.** With pandas >= 3 and pyarrow installed, string columns use pyarrow, whose regular expressions (RE2) treat `\w` as ASCII only. In v1.0.0, `prepare_items.py` normalised stems with `Series.str.replace(r"[^\w]+", ...)`, which in such an environment collapsed all Cyrillic stems into a few groups and produced a different train/validation/test split. v1.1.0 normalises with Python's `re` (Unicode `\w`); the split is then identical to the published one in every environment, and `compare_to_reference.py` reports ALL MATCH.
+
 ## Citation
 
-If you use this code, please cite the paper and the software (see [`CITATION.cff`](CITATION.cff)). Software (release v1.0.0): [doi:10.5281/zenodo.22961905](https://doi.org/10.5281/zenodo.22961905). Open data: [doi:10.5281/zenodo.22960055](https://doi.org/10.5281/zenodo.22960055).
+If you use this code, please cite the paper and the software (see [`CITATION.cff`](CITATION.cff)). Software: release v1.0.0 [doi:10.5281/zenodo.22961905](https://doi.org/10.5281/zenodo.22961905); release v1.1.0 (revision) is archived in the same Zenodo record as a new version. Open data: [doi:10.5281/zenodo.22960055](https://doi.org/10.5281/zenodo.22960055).
 
 ## License
 
